@@ -1,14 +1,13 @@
 
-var reverse = function(x) {
-  const MIN = -2147483648
-  const MAX = 2147483647
-  const reAbsNum = x<0?(Math.abs(x).toString().split('').reverse().join('')*-1):(Math.abs(x).toString().split('').reverse().join('')*1)
-  if(reAbsNum>MAX||-reAbsNum<MIN){
-    return 0
-  }else{
-    return reAbsNum
-  }
-}
+const romanMap = new Map([
+  ['I',1],
+  ['V',5],
+  ['X',10],
+  ['L',50],
+  ['C',100],
+  ['D',500],
+  ['M',1000],
+])
 
-console.log(reverse(0));
+console.log(romanMap);
 
