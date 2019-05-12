@@ -1,13 +1,20 @@
+var longestCommonPrefix = function(strs) {
+  if(strs.length>0){
 
-const romanMap = new Map([
-  ['I',1],
-  ['V',5],
-  ['X',10],
-  ['L',50],
-  ['C',100],
-  ['D',500],
-  ['M',1000],
-])
-
-console.log(romanMap);
+    let firstStr = strs[0]
+    let index = 1
+    let commonStr = ''
+    while (strs.every(item=>{
+      return item.indexOf(firstStr.substring(0,index))>-1
+    })) {
+      commonStr=firstStr.substring(0,index)
+      index++
+    }
+    return commonStr
+  }else{
+    return ''
+  }
+};
+let x = ['']
+console.log(longestCommonPrefix(x));
 
