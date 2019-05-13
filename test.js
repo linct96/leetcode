@@ -1,20 +1,19 @@
-var longestCommonPrefix = function(strs) {
-  if(strs.length>0){
-
-    let firstStr = strs[0]
-    let index = 1
-    let commonStr = ''
-    while (strs.every(item=>{
-      return item.indexOf(firstStr.substring(0,index))>-1
-    })) {
-      commonStr=firstStr.substring(0,index)
-      index++
-    }
-    return commonStr
-  }else{
-    return ''
+var isValid = function(s) {
+  let o = {
+    '{':'}',
+    '[':']',
+    '(':')',
   }
+  let stack = []
+  for (let i = 0; i < s.length; i++) {
+    const l = stack.length
+    if(s[i]===o[stack[l-1]]){
+      stack.pop()
+      continue
+    }
+    stack.push(s[i])
+  }
+  return stack
 };
-let x = ['']
-console.log(longestCommonPrefix(x));
+console.log(isValid('()[]{}'));
 
