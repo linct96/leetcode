@@ -1,19 +1,17 @@
-var isValid = function(s) {
-  let o = {
-    '{':'}',
-    '[':']',
-    '(':')',
-  }
-  let stack = []
-  for (let i = 0; i < s.length; i++) {
-    const l = stack.length
-    if(s[i]===o[stack[l-1]]){
-      stack.pop()
-      continue
+const list = [3,1,5,4,9,6,2,8]
+function babelsort(list) {
+  for (let i = 0; i < list.length; i++) {
+    for (let j = list.length-1; j > i; j--) {
+      if(list[j]<list[j-1]){
+        let temp = list[j-1]
+        list[j-1] = list[j]
+        list[j] = temp
+      }
     }
-    stack.push(s[i])
   }
-  return stack
-};
-console.log(isValid('()[]{}'));
+  return list
+}
+
+console.log(babelsort(list));
+
 
