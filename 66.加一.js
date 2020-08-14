@@ -6,11 +6,11 @@
  * https://leetcode-cn.com/problems/plus-one/description/
  *
  * algorithms
- * Easy (39.87%)
- * Likes:    357
+ * Easy (45.03%)
+ * Likes:    525
  * Dislikes: 0
- * Total Accepted:    83.8K
- * Total Submissions: 203.3K
+ * Total Accepted:    188.9K
+ * Total Submissions: 419.3K
  * Testcase Example:  '[1,2,3]'
  *
  * 给定一个由整数组成的非空数组所表示的非负整数，在该数的基础上加一。
@@ -41,9 +41,19 @@
  * @return {number[]}
  */
 var plusOne = function(digits) {
-  const n = digits.join('')*1+1+""
-  return n.split('')
+  let i = digits.length-1
+  let value = digits[i]
+  while(value===9){
+    digits[i] = 0
+    i--
+    value = digits[i]
+  }
+  if (i<0) {
+    digits.unshift(1)
+  }else{
+    digits[i]+=1
+  }
+  return digits
 };
-console.log(6145390195186705543+1);
 // @lc code=end
 
