@@ -36,12 +36,12 @@
  * @param {number} target
  * @return {number[]}
  */
-var twoSum = function(nums, target) {
+var twoSum = function (nums, target) {
   // 二重循环查找
   for (let i = 0; i < nums.length; i++) {
-    for (let j = i+1; j < nums.length; j++) {
-      if (nums[i]+nums[j]===target) {
-        return [i,j]
+    for (let j = i + 1; j < nums.length; j++) {
+      if (nums[i] + nums[j] === target) {
+        return [i, j]
       }
     }
   }
@@ -53,15 +53,15 @@ var twoSum = function(nums, target) {
  * @param {number} target
  * @return {number[]}
  */
-var twoSum = function(nums, target) {
+var twoSum = function (nums, target) {
   const map = new Map()
   // 一次遍历后的值存到map中
   for (let i = 0; i < nums.length; i++) {
-    const key = target-nums[i]
+    const key = target - nums[i]
     if (map.has(key)) {
-      return [map.get(key),i]
-    }else{
-      map.set(nums[i],i)
+      return [map.get(key), i]
+    } else {
+      map.set(nums[i], i)
     }
   }
 };

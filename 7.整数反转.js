@@ -46,17 +46,17 @@
  * @param {number} x
  * @return {number}
  */
-var reverse = function(x) {
+var reverse = function (x) {
   let isNegative = false
-  const MAX = Math.pow(2,31)-1
-  const MIN = Math.pow(2,31)*-1
-  if (x<0) isNegative=true
-  let strArr = (Math.abs(x)+'').split('').reverse().join('')
-  if (isNegative) { 
-    strArr = strArr*-1
-    return MIN<=strArr?strArr:0
-  }else{
-    return MAX>=strArr?strArr:0
+  const MAX = Math.pow(2, 31) - 1
+  const MIN = Math.pow(2, 31) * -1
+  if (x < 0) isNegative = true
+  let strArr = (Math.abs(x) + '').split('').reverse().join('')
+  if (isNegative) {
+    strArr = strArr * -1
+    return MIN <= strArr ? strArr : 0
+  } else {
+    return MAX >= strArr ? strArr : 0
   }
 };
 // @lc code=end
